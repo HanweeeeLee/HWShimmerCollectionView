@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		78CAD53125DE6D4100CF09C3 /* HWShimmerCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 78CAD52F25DE6D4100CF09C3 /* HWShimmerCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78CAD55625DE703400CF09C3 /* HWShimmerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CAD55525DE703400CF09C3 /* HWShimmerCollectionView.swift */; };
+		78CAD55B25DE708B00CF09C3 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CAD55A25DE708B00CF09C3 /* UIViewExtension.swift */; };
+		78CAD55F25DE70E500CF09C3 /* HWShimmerCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CAD55E25DE70E500CF09C3 /* HWShimmerCollectionViewCellProtocol.swift */; };
+		78CAD56225DE713600CF09C3 /* HWReloadHandlerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CAD56125DE713600CF09C3 /* HWReloadHandlerCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		78CAD52C25DE6D4100CF09C3 /* HWShimmerCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HWShimmerCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78CAD52F25DE6D4100CF09C3 /* HWShimmerCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWShimmerCollectionView.h; sourceTree = "<group>"; };
 		78CAD53025DE6D4100CF09C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78CAD55525DE703400CF09C3 /* HWShimmerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWShimmerCollectionView.swift; sourceTree = "<group>"; };
+		78CAD55A25DE708B00CF09C3 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		78CAD55E25DE70E500CF09C3 /* HWShimmerCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWShimmerCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
+		78CAD56125DE713600CF09C3 /* HWReloadHandlerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWReloadHandlerCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +54,30 @@
 		78CAD52E25DE6D4100CF09C3 /* HWShimmerCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				78CAD55925DE707A00CF09C3 /* Extension */,
+				78CAD55825DE707A00CF09C3 /* Protocol */,
+				78CAD55525DE703400CF09C3 /* HWShimmerCollectionView.swift */,
+				78CAD56125DE713600CF09C3 /* HWReloadHandlerCollectionView.swift */,
 				78CAD52F25DE6D4100CF09C3 /* HWShimmerCollectionView.h */,
 				78CAD53025DE6D4100CF09C3 /* Info.plist */,
 			);
 			path = HWShimmerCollectionView;
+			sourceTree = "<group>";
+		};
+		78CAD55825DE707A00CF09C3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				78CAD55E25DE70E500CF09C3 /* HWShimmerCollectionViewCellProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		78CAD55925DE707A00CF09C3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				78CAD55A25DE708B00CF09C3 /* UIViewExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78CAD55B25DE708B00CF09C3 /* UIViewExtension.swift in Sources */,
+				78CAD56225DE713600CF09C3 /* HWReloadHandlerCollectionView.swift in Sources */,
+				78CAD55625DE703400CF09C3 /* HWShimmerCollectionView.swift in Sources */,
+				78CAD55F25DE70E500CF09C3 /* HWShimmerCollectionViewCellProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
