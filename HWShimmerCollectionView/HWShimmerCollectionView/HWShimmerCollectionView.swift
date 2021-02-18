@@ -7,30 +7,30 @@
 
 import UIKit
 
-@objc public protocol HWCollectionViewDelegate: UICollectionViewDelegate {
+@objc public protocol HWShimmerCollectionViewDelegate: UICollectionViewDelegate {
     
-    func numberOfShimmerCollectionViewCell(_ hwCollectionView: HWCollectionView) -> UInt
-    func shimmerCollectionViewCellIdentifier(_ hwCollectionView: HWCollectionView) -> String
+    func numberOfShimmerCollectionViewCell(_ hwCollectionView: HWShimmerCollectionView) -> UInt
+    func shimmerCollectionViewCellIdentifier(_ hwCollectionView: HWShimmerCollectionView) -> String
     
-    @objc optional func willApearShimmerCollectionView(_ hwCollectionView: HWCollectionView)
-    @objc optional func didApearShimmerCollectionView(_ hwCollectionView: HWCollectionView)
-    @objc optional func willDisapearShimmerCollectionView(_ hwCollectionView: HWCollectionView)
-    @objc optional func didDisapearShimmerCollectionView(_ hwCollectionView: HWCollectionView)
-    
-}
-
-@objc public protocol HWCollectionViewDelegateFlowLayout: HWCollectionViewDelegate {
-    
-    @objc optional func hwShimmerCollectionView(_ collectionView: HWCollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    @objc optional func hwShimmerCollectionView(_ collectionView: HWCollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
-    @objc optional func hwShimmerCollectionView(_ collectionView: HWCollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
-    @objc optional func hwShimmerCollectionView(_ collectionView: HWCollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
-    @objc optional func hwShimmerCollectionView(_ collectionView: HWCollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
-    @objc optional func hwShimmerCollectionView(_ collectionView: HWCollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize
+    @objc optional func willApearShimmerCollectionView(_ hwCollectionView: HWShimmerCollectionView)
+    @objc optional func didApearShimmerCollectionView(_ hwCollectionView: HWShimmerCollectionView)
+    @objc optional func willDisapearShimmerCollectionView(_ hwCollectionView: HWShimmerCollectionView)
+    @objc optional func didDisapearShimmerCollectionView(_ hwCollectionView: HWShimmerCollectionView)
     
 }
 
-public class HWCollectionView: UIView {
+@objc public protocol HWCollectionViewDelegateFlowLayout: HWShimmerCollectionViewDelegate {
+    
+    @objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    @objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
+    @objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    @objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+    @objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
+    @objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize
+    
+}
+
+public class HWShimmerCollectionView: UIView {
     
     //MARK: private property
     private var flowLayoutDelegate: HWCollectionViewDelegateFlowLayout?
@@ -42,7 +42,7 @@ public class HWCollectionView: UIView {
     public lazy var collectionView: HWReloadHandlerCollectionView = HWReloadHandlerCollectionView(frame: self.bounds, collectionViewLayout: UICollectionViewLayout())
     public lazy var shimmerCollectionView: HWReloadHandlerCollectionView = HWReloadHandlerCollectionView(frame: self.bounds, collectionViewLayout: UICollectionViewLayout())
     
-    public weak var delegate: HWCollectionViewDelegate? {
+    public weak var delegate: HWShimmerCollectionViewDelegate? {
         willSet {
             self.flowLayoutDelegate = newValue as? HWCollectionViewDelegateFlowLayout
         }
@@ -195,7 +195,7 @@ public class HWCollectionView: UIView {
     }
 }
 
-extension HWCollectionView: UICollectionViewDataSource {
+extension HWShimmerCollectionView: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.shimmerCollectionView {
@@ -225,7 +225,7 @@ extension HWCollectionView: UICollectionViewDataSource {
     
 }
 
-extension HWCollectionView: UICollectionViewDelegateFlowLayout {
+extension HWShimmerCollectionView: UICollectionViewDelegateFlowLayout {
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return self.flowLayoutDelegate?.hwShimmerCollectionView?(self, layout: collectionViewLayout, sizeForItemAt: indexPath) ?? CGSize(width: 0, height: 0)

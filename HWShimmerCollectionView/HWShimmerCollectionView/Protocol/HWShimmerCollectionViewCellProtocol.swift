@@ -16,7 +16,7 @@ public protocol HWShimmerCollectionViewCellProtocol: UICollectionViewCell {
     func endShimmer()
 }
 
-extension HWShimmerCollectionViewCellProtocol {
+public extension HWShimmerCollectionViewCellProtocol {
     func startShimmer() {
         shimmerViewPool.map {
             let view: UIView = UIView()
