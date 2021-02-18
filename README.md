@@ -8,7 +8,7 @@ HWShimmerCollectionView
 
 | Demo1 |
 |---|
-|![9](https://user-images.githubusercontent.com/60125719/108357657-136ff380-7231-11eb-9872-9e33066bf56f.gif) |
+|![9](https://user-images.githubusercontent.com/60125719/108358449-14edeb80-7232-11eb-84d3-a3b0f898a0d7.gif) |
 
 ## Requirements
 
