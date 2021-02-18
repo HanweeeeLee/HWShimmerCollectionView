@@ -146,6 +146,7 @@ public class HWShimmerCollectionView: UIView {
         self.addConstraints([shimmerConstraint1, shimmerConstraint2, shimmerConstraint3, shimmerConstraint4])
         self.shimmerCollectionView.delegate = self
         self.shimmerCollectionView.dataSource = self
+        self.shimmerCollectionView.isScrollEnabled = false
         self.shimmerCollectionView.isHidden = true
         
     }
