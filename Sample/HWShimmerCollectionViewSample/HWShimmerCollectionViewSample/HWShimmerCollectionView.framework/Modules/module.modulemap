@@ -1,0 +1,11 @@
+framework module HWShimmerCollectionView {
+  umbrella header "HWShimmerCollectionView.h"
+
+  export *
+  module * { export * }
+}
+
+module HWShimmerCollectionView.Swift {
+    header "HWShimmerCollectionView-Swift.h"
+    requires objc
+}
