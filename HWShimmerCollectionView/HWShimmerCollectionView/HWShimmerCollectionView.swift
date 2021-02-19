@@ -165,6 +165,7 @@ public class HWShimmerCollectionView: UIView {
         self.delegate?.willApearShimmerCollectionView?(self)
         self.isOverMinimumShimmerTimer = false
         self.shimmerCollectionView.alpha = 1
+        self.collectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         self.shimmerCollectionView.isHidden = false
         self.isShimmering = true
         self.shimmerCollectionView.reloadData()
