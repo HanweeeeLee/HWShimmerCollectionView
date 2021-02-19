@@ -13,15 +13,12 @@ You can use this library even if you use data binding, such as rxSwift.
 
 ### Demo <a id="demo"></a>
 
-| Demo |
+| Demo1 |
 |---|
-|![9](HWShimmerCollectionView](https://user-images.githubusercontent.com/60125719/108461642-6b087080-72be-11eb-9308-438a6354095f.gif) |
-
+|![9](https://user-images.githubusercontent.com/60125719/108461642-6b087080-72be-11eb-9308-438a6354095f.gif) |
 ## Usage
 
-### HWShimmerCollectionView is a class that inherits UIView.
-### Create HWShimmerCollectionView by code or UIView inherits HWShimmerCollectionView from storyboard.
-### If you add only a few of my delegate functions, you can use the same datasource and delegate as using the UICollectionView.
+### HWShimmerCollectionView is a class that inherits UIView. Create HWShimmerCollectionView by code or UIView inherits HWShimmerCollectionView from storyboard. If you add only a few of my delegate functions, you can use the same datasource and delegate as using the UICollectionView.
 
 ```
 let myCollectionView: HWShimmerCollectionView = HWShimmerCollectionView(...) 
@@ -40,7 +37,7 @@ self.myCollectionView.shimmerCollectionViewLayout = shimmerLayout
 func numberOfShimmerCollectionViewCell(_ hwCollectionView: HWShimmerCollectionView.HWShimmerCollectionView) -> UInt
 
 /*
-  Return the re-use identifier of the shimmering cell for reuse.
+   Return the re-use identifier of the shimmering cell for reuse.
 */
 func shimmerCollectionViewCellIdentifier(_ hwCollectionView: HWShimmerCollectionView.HWShimmerCollectionView) -> String
 
@@ -50,15 +47,15 @@ func shimmerCollectionViewCellIdentifier(_ hwCollectionView: HWShimmerCollection
 ```
 @objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView.HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
 
-    @objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView.HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
+@objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView.HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
 
-    @objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView.HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
+@objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView.HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
 
-    @objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView.HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+@objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView.HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
 
-    @objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView.HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
+@objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView.HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
 
-    @objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView.HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize
+@objc optional func hwShimmerCollectionView(_ collectionView: HWShimmerCollectionView.HWShimmerCollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize
 ```
 
 
