@@ -87,6 +87,12 @@ public class HWShimmerCollectionView: UIView {
         }
     }
     
+    public var bounces: Bool = true {
+        didSet {
+            self.collectionView.bounces = self.bounces
+        }
+    }
+    
     public var minimumShimmerSecond: CGFloat = 1.5
     public var shimmerCollectionViewFadeOutSecond: CGFloat = 0.15
     
@@ -126,7 +132,7 @@ public class HWShimmerCollectionView: UIView {
         self.addConstraints([constraint1, constraint2, constraint3, constraint4])
         
         self.addSubview(self.shimmerCollectionView)
-        self.shimmerCollectionView.backgroundColor = .clear
+        self.shimmerCollectionView.backgroundColor = .white
         self.shimmerCollectionView.translatesAutoresizingMaskIntoConstraints = false
         let shimmerConstraint1 = NSLayoutConstraint(item: self.shimmerCollectionView, attribute: .leading, relatedBy: .equal,
                                              toItem: self, attribute: .leading,
@@ -178,6 +184,7 @@ public class HWShimmerCollectionView: UIView {
     
     public func hideShimmer() {
         if self.isOverMinimumShimmerTimer {
+            self.isOverMinimumShimmerTimer = false
             self.delegate?.willDisapearShimmerCollectionView?(self)
             self.isShimmering = false
             self.shimmerCollectionView.reloadData()
@@ -195,6 +202,15 @@ public class HWShimmerCollectionView: UIView {
             }
         }
     }
+    
+    public func register(_ nib: UINib?, forCellWithReuseIdentifier identifier: String) {
+        self.collectionView.register(nib, forCellWithReuseIdentifier: identifier)
+    }
+    
+    public func reloadData() {
+        self.collectionView.reloadData()
+    }
+    
 }
 
 extension HWShimmerCollectionView: UICollectionViewDataSource {
